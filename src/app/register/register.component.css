@@ -1,0 +1,58 @@
+.register-component {
+  background-color: black;
+  height:100vh;
+}
+.form {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.register {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: white;
+  font-size: 2rem;
+}
+.log-in {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+input {
+  border: none;
+  border-bottom: 1px solid white;
+  height: 2rem;
+  font-size: 1rem;
+  background: 0 0;
+  color:white;
+  margin-bottom: 1.5rem;
+  padding-left: .5rem;
+}
+
+::-webkit-input-placeholder {
+  color: red;
+}
+select{
+  border: none;
+  border-radius: 0;
+  background: 0 0;
+  color: red;
+  border-bottom: 1px solid white;
+  height: 2rem;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  padding-left: .5rem;
+}
+button {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  width:100%;
+}
+.button {
+  /*text-align: center;*/
+  margin-top: 10rem;
+}

@@ -7,13 +7,19 @@ export class Encounter {
     public action: string
   ){}
 }
-export class Colonist {
+export class NewColonist {
   constructor(
     public name: string,
-    public job: Job,
-    public id: number,
+    public job_id: string,
     public age: number
   ){}
+}
+
+interface Colonist {
+    name: string;
+    job: number;
+    id: number;
+    age: number
 }
 export class Job {
   constructor(
