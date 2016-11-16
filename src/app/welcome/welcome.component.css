@@ -1,6 +1,12 @@
+.welcome-mars {
+background: url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Mars_atmosphere_2.jpg');
+height: 100vh;
+background-size: cover;
+background-repeat: no-repeat;
+}
 h1 {
   text-transform: uppercase;
-}
-body {
-  background: red;
+  color: white;
+  text-align: center;
+  margin-top: 
 }
