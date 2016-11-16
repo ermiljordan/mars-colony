@@ -7,11 +7,11 @@
   <input type="text" placeholder="Name" [(ngModel)]="colonist.name" name="name">
   <input type="number" placeholder="Age" [(ngModel)]="colonist.age" name="age">
     <select [(ngModel)]="colonist.job_id" name="job_id">
-      <option>Select a Job</option>
+      <option [value]="NO_JOB_SELECTED">Select a Job</option>
       <option *ngFor="let job of marsJobs" [value]="job.id">{{ job.name }} </option>
     </select>
     <div class="button">
-     <button type=""> Check in</button>
+     <button [disabled]= "!jobSelected" type=""> Check in</button>
     </div>
 </form>
   {{ colonist.name }} | {{ colonist.age }} | {{ colonist.job_id }}

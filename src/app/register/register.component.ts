@@ -13,8 +13,10 @@ export class RegisterComponent implements OnInit {
   colonist: NewColonist;
   marsJobs: Job[];
 
+  NO_JOB_SELECTED = '(none)';
+
   constructor(jobService: JobService) {
-    this.colonist = new NewColonist(null, null, null);
+    this.colonist = new NewColonist(null, this.NO_JOB_SELECTED , null);
 
     jobService.getJobs().subscribe((jobs) =>{
       this.marsJobs = jobs;
@@ -24,6 +26,10 @@ export class RegisterComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  get jobSelected () {
+    return this.colonist.job_id !== this.NO_JOB_SELECTED 
   }
 
 }
