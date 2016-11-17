@@ -1,3 +1,16 @@
-<p>
-  encounter works!
-</p>
+<div class= "view-list">
+<h1 class="heading">Recent Encounters
+  <span>See an Alien? Report it!</span>
+</h1>
+
+<ul class="encounter-list">
+  <li class="whatever" *ngFor="let encounter of encounterList">
+    <div>{{encounter.date}} - {{encounter.atype}}</div>
+    <p>{{encounter.action}}</p>
+  </li>
+</ul>
+
+<footer>
+  <button class="button">Report Encounter</button>
+</footer>
+</div>

@@ -13,8 +13,9 @@ export default class EncounterService {
 
   constructor(private http: Http) { }
 
-  getEncounter(): Observable<Encounter[]>{
-    return this.http.get(this.ENCOUNTER_JSON).map((res: Response) => res.json().enounter);
+  getJobs(): Observable<Encounter[]>{
+    return this.http.get(this.ENCOUNTER_JSON)
+    .map((res: Response) => res.json().encounters);
   }
 
 }
