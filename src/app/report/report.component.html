@@ -1,9 +1,10 @@
-<!--<div class ="report-encounter">
-  <h1 class="enounter">Report Encounter
-    <span>Safety on Mars is your responsibility</span>
-  </h1>
-  <form class="alien-form">
-    <select type="" placeholder="Name"></select>
+<div class="encounter-form">
+  <form [formGroup]="reportForm" (ngSubmit)="onSubmit($event)">
+    <select formControlName="atype">
+      <option [value]="NO_ALIEN_SELECTED">--Select an Alien</option>
+      <option *ngFor="let alien of alienList" [value]="alien.type">{{alien.type}}</option>
+    </select>
+    <textarea placeholder="Action Taken" formControlName="action"></textarea>
+    <button>Submit Report</button>
   </form>
-  <button>Submit Report</button>
-</div>-->
+</div>

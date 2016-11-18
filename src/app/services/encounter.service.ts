@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {Encounter} from '../models';
+import {Encounter, NewEncounter} from '../models';
 
 @Injectable()
 export default class EncounterService {
@@ -15,7 +15,17 @@ export default class EncounterService {
 
   getJobs(): Observable<Encounter[]>{
     return this.http.get(this.ENCOUNTER_JSON)
-    .map((res: Response) => res.json().encounters);
+                    .map((res: Response) => res.json().encounters);
+  }
+
+  submitEncounter(encounter: NewEncounter): Observable<Encounter[]> {
+    
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post(this.ENCOUNTER_JSON, {encounter}, { headers })
+                    .map((res: Response) => res.json().encounter);
+
   }
 
 }
