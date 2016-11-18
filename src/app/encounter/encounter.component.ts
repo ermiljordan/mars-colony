@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Encounter } from '../models'
 import EncounterService from '../services/encounter.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-encounter',
@@ -12,7 +13,8 @@ export class EncounterComponent implements OnInit {
 
   encounterList: Encounter[];
 
-  constructor(encounterService: EncounterService) {
+  constructor(private encounterService: EncounterService,
+              private router: Router) {
     encounterService.getJobs().subscribe((encounters) => {
       this.encounterList = encounters;
       console.log(encounters);
@@ -20,5 +22,8 @@ export class EncounterComponent implements OnInit {
    }
   ngOnInit() {
   }
-
+  onSubmit() {
+    this.router.navigate(['/report']);
+    console.log('hello');
+  }
 }

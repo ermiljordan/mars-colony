@@ -3,6 +3,8 @@ import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractC
 import { NewColonist, Job } from '../models';
 import JobService from '../services/jobs.service';
 import {cantBe} from '../shared/validators';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -19,7 +21,8 @@ export class RegisterComponent implements OnInit {
   NO_JOB_SELECTED = '(none)';
 
   constructor(public jobService: JobService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private router: Router) {
 
     jobService.getJobs().subscribe((jobs) =>{
       this.marsJobs = jobs;
@@ -52,6 +55,7 @@ ngOnInit() {
       const age = this.registerForm.get('age').value;
       const job_id = this.registerForm.get('job_id').value;
       console.log('Ok let\'s register this new colonist:', new NewColonist (name, age, job_id));
+      this.router.navigate(['/encounter']);
     }
   }
 }
