@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding, trigger, transition, animate, style, state } from '@angular/core';
 import AliensService from '../services/aliens.service';
 import EncounterService from '../services/encounter.service';
 import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -12,12 +12,41 @@ import {cantBe} from '../shared/validators';
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css'],
-  providers: [AliensService, EncounterService]
+  providers: [AliensService, EncounterService],
+  animations: [
+    trigger('routeAnimation', [
+      state('*',
+        style({
+          opacity: 1,
+          transform: 'translateX(0)'
+        })
+      ),
+      transition(':enter', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate('0.2s ease-in')
+      ]),
+      transition(':leave', [
+        animate('0.5s ease-out', style({
+          opacity: 0,
+          transform: 'translateY(100%)'
+        }))
+      ])
+    ])
+  ]
 })
 export class ReportComponent implements OnInit {
 
   alienList: Aliens[];
   reportForm: FormGroup;
+  @HostBinding('@routeAnimation') get routeAnimation() {
+    return true;
+  }
+  @HostBinding('style.display') get display() {
+   return 'block';
+ }
   NO_ALIEN_SELECTED = '(none)'
 
   constructor(private aliensService:AliensService,

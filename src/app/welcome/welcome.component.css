@@ -1,42 +1,45 @@
 .welcome-mars {
-background: url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Mars_atmosphere_2.jpg');
+background: url('http://www.zastavki.com/pictures/1920x1200/2010/Space_Cool_Planet_Picture_Retro_026533_.jpg');
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
+text-align: center;
+justify-content: space-around;;
 }
 h1 {
   text-transform: uppercase;
+  font-family: Courier New, Courier, monospace;
+  font-size: 2.5rem;
+  font-weight: 100;
+  padding: 0 1rem;
   color: white;
-  text-align: center;
+  text-shadow: 9px 4px 6px darkslateblue;
 }
-
-.sonar-emitter {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  border-radius: 9999px;
-  background-color: HSL(45,100%,50%);
+h2 {
+  color:white;
+  font-size: 1.5rem;
+  font-family: Courier New, Courier, monospace;
 }
-.sonar-wave {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  background-color: HSL(45,100%,50%);
-  z-index: -1;
-  pointer-events: none;
+span {
+  text-transform: uppercase;
 }
-@keyframes sonarWave {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    transform: scale(3);
-    opacity: 0;
-  }
+.round-button {
+	width:5%;
 }
-.sonar-wave {
-  animation: sonarWave 2s linear infinite
+.round-button-circle {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:10px solid #cfdcec;
+    overflow:hidden;
+    background: black; 
+}
+.round-button a {
+    display:block;
+	float:left;
+	width:100%;
+	padding-top:50%;
+    padding-bottom:50%;
+	line-height:1em;
 }

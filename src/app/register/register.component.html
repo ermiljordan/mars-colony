@@ -3,7 +3,7 @@
   Register
 </h1>
 
-<form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
+<form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit($event)" [ngClass]= "{showValidator: submitted}">
   
   <input type="text" placeholder="Name" formControlName="name"/>
   <input type="number" placeholder="Age" formControlName="age"/>
