@@ -2,11 +2,6 @@
   background-color: black;
   height:100vh;
 }
-/*.form {
-  width: 98%;
-  margin: 0 auto;
-}*/
-
 .register {
   text-align: center;
   padding: 2rem 1rem;
@@ -62,14 +57,17 @@ button {
 }
 
 .showValidator .ng-invalid {
-  /*animation-duration: 
-  animation-timing0function:
-  animation-direction:*/
-  border:2px solid yellow;
-
+  animation-name: blink ;
+  animation-duration: .5s ;
+  animation-timing-function: step-end ;
+  animation-iteration-count: infinite ;
+  animation-direction: alternate ;
 }
 
 
 @keyframes blink { 
-  50% { border-color: black};
+   50% {         border: 1px solid #ff0000;
+        -moz-box-shadow: 0 0 3px 3px #ff0000;
+        -webkit-box-shadow: 0 0 3px 3px#ff0000;
+        box-shadow: 0 0 3px 3px #ff0000;} 
 }

@@ -1,0 +1,11 @@
+.not-found {
+  height: 100vh;
+  background: url('http://cdn.wallpapersafari.com/11/18/6cxGeB.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
