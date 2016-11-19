@@ -44,3 +44,18 @@ button {
   border: none;
   color: white;
 }
+.showValidator .ng-invalid {
+  animation-name: blink ;
+  animation-duration: .5s ;
+  animation-timing-function: step-end ;
+  animation-iteration-count: infinite ;
+  animation-direction: alternate ;
+}
+
+
+@keyframes blink { 
+   50% {         border: 1px solid #ff0000;
+        -moz-box-shadow: 0 0 3px 3px #ff0000;
+        -webkit-box-shadow: 0 0 3px 3px#ff0000;
+        box-shadow: 0 0 3px 3px #ff0000;} 
+}

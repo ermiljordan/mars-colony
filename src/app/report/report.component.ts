@@ -41,6 +41,8 @@ export class ReportComponent implements OnInit {
 
   alienList: Aliens[];
   reportForm: FormGroup;
+  submitted: boolean;
+
   @HostBinding('@routeAnimation') get routeAnimation() {
     return true;
   }
@@ -76,6 +78,9 @@ export class ReportComponent implements OnInit {
 
   onSubmit(event) {
     event.preventDefault();
+    if (this.reportForm.invalid) {
+      this.submitted = true;
+    }
     const date = this.getDate();
     const atype = this.reportForm.get('atype').value
     const action = this.reportForm.get('action').value

@@ -20,12 +20,15 @@ input {
   border: none;
   border-bottom: 1px solid white;
   height: 2rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background: 0 0;
   color:white;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   padding-left: .5rem;
-  font-family: unset
+  font-family: Courier New, Courier, monospace;
+}
+input:hover {
+  background: gold;
 }
 
 ::-webkit-input-placeholder {
@@ -38,10 +41,14 @@ select{
   color: red;
   border-bottom: 1px solid white;
   height: 2rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   width: 100%;
   -webkit-appearance: none;
   padding-left: .5rem;
+  font-family: Courier New, Courier, monospace;
+}
+select:hover {
+  background: gold;
 }
 button {
   background: black;

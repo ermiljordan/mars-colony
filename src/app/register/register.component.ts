@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
   marsJobs: Job[];
   registerForm: FormGroup;
   submitted: boolean;
+  
   NO_JOB_SELECTED = '(none)';
   @HostBinding('@routeAnimation') get routeAnimation() {
     return true;

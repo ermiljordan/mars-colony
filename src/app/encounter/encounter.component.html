@@ -4,13 +4,14 @@
 </h1>
 
 <ul class="encounter-list">
-  <li class="whatever" *ngFor="let encounter of encounterList">
-    <div>{{encounter.date}} - {{encounter.atype}}</div>
-    <p>{{encounter.action}}</p>
+  <li class="alien-list" *ngFor="let encounter of encounterList">
+    <div>{{encounter.date}} - {{encounter.atype}}
+      <span>{{encounter.action}}</span>
+    </div>
   </li>
 </ul>
 
-<footer class="button">
-  <a routerLink ="/report" routerLinkActive="active">Report Encounter</a>
+<footer>
+  <a class="button"routerLink ="/report" routerLinkActive="active">Report Encounter</a>
 </footer>
 </div>
